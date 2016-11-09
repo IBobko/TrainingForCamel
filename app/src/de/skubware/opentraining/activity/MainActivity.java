@@ -26,6 +26,7 @@ import de.skubware.opentraining.R;
 import de.skubware.opentraining.activity.create_workout.ExerciseTypeListActivity;
 import de.skubware.opentraining.activity.manage_workouts.WorkoutListActivity;
 import de.skubware.opentraining.activity.settings.SettingsActivity;
+import de.skubware.opentraining.activity.start_running.RunningListActivity;
 import de.skubware.opentraining.basic.Workout;
 import de.skubware.opentraining.db.Cache;
 import de.skubware.opentraining.db.DataProvider;
@@ -101,12 +102,15 @@ public class MainActivity extends ActionBarActivity {
 					showSelectWorkoutDialog();
 					break;
 				case 1:
-					startActivity(new Intent(MainActivity.this.getApplicationContext(), ExerciseTypeListActivity.class));
+					startActivity(new Intent(MainActivity.this.getApplicationContext(), RunningListActivity.class));
 					break;
 				case 2:
-					startActivity(new Intent(MainActivity.this.getApplicationContext(), WorkoutListActivity.class));
+					startActivity(new Intent(MainActivity.this.getApplicationContext(), ExerciseTypeListActivity.class));
 					break;
 				case 3:
+					startActivity(new Intent(MainActivity.this.getApplicationContext(), WorkoutListActivity.class));
+					break;
+				case 4:
 					startActivity(new Intent(MainActivity.this.getApplicationContext(), SettingsActivity.class));
 					break;
 				default:

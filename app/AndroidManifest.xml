@@ -45,6 +45,24 @@
                 android:value=".ExerciseTypeListActivity" />
         </activity>
         <activity
+            android:name="de.skubware.opentraining.activity.start_running.RunningListActivity"
+            android:label="Running menu"
+            android:parentActivityName="de.skubware.opentraining.activity.MainActivity"
+            android:icon="@drawable/icon_dumbbell" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.skubware.opentraining.activity.MainActivity" />
+        </activity>
+        <activity
+            android:name="de.skubware.opentraining.activity.start_running.RunningByTimeActivity"
+            android:label="Running menu"
+            android:parentActivityName="de.skubware.opentraining.activity.start_running.RunningListActivity"
+            android:icon="@drawable/icon_dumbbell" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.skubware.opentraining.activity.start_running.RunningListActivity" />
+        </activity>
+        <activity
             android:name="de.skubware.opentraining.activity.start_training.FExListActivity"
             android:label="@string/title_exercise_list"
             android:parentActivityName="de.skubware.opentraining.activity.MainActivity"
