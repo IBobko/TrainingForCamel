@@ -2,6 +2,7 @@
 
     <!-- MainActivity -->
     <string name="create_workout">Create workout</string>
+    <string name="start_tabata">Start TABATA</string>
     <string name="start_training">Start training</string>
     <string name="manage_workouts">Manage workouts</string>
     <string name="choose_workout">Choose a workout</string>

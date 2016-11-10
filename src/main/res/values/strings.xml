@@ -1,0 +1,4 @@
+<resources>
+    <string name="title_activity_tabata">TabataActivity</string>
+    <string name="title_activity_choose_time">ChooseTimeActivity</string>
+</resources>

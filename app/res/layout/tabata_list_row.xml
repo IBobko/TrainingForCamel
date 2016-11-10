@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="schemas.android.com/apk/lib/com.example.NAMEGAME"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:id="@+id/tabataItem"
+    android:baselineAligned="false">
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="237dp"
+        android:layout_height="match_parent"
+        android:id="@+id/tvDesc"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText,RtlHardcoded"
+        android:layout_weight="2.15"
+        android:textAlignment="center"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:text=":00"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/tvSec"
+        android:textSize="42sp"
+        android:layout_weight="1"
+        tools:ignore="HardcodedText,InefficientWeight"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:gravity="center_vertical" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/ibChoose"
+        android:contentDescription=""
+        tools:ignore="ContentDescription"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:background="@drawable/abc_ab_share_pack_holo_dark"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:src="@drawable/icon_info" />
+
+</LinearLayout>
