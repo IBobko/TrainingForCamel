@@ -1,24 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.skubware.opentraining"
-    android:installLocation="auto" >
+    android:installLocation="auto">
 
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
-    
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
+        android:name=".activity.acra.OpenTrainingApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" android:name="de.skubware.opentraining.activity.acra.OpenTrainingApplication">
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity
-            android:name="de.skubware.opentraining.activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,79 +32,206 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="de.skubware.opentraining.activity.create_workout.ExerciseTypeListActivity"
+            android:name=".activity.create_workout.ExerciseTypeListActivity"
+            android:icon="@drawable/icon_dumbbell"
             android:label="@string/title_exercisetype_list"
-            android:parentActivityName="de.skubware.opentraining.activity.MainActivity"
-            android:icon="@drawable/icon_dumbbell" >
+            android:parentActivityName=".activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="de.skubware.opentraining.activity.MainActivity" />
         </activity>
         <activity
-            android:name="de.skubware.opentraining.activity.create_workout.ExerciseTypeDetailActivity"
+            android:name=".activity.create_workout.ExerciseTypeDetailActivity"
+            android:icon="@drawable/icon_dumbbell"
             android:label="@string/title_exercisetype_detail"
-            android:parentActivityName=".ExerciseTypeListActivity" 
-            android:icon="@drawable/icon_dumbbell" >
+            android:parentActivityName=".ExerciseTypeListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ExerciseTypeListActivity" />
         </activity>
         <activity
-            android:name="de.skubware.opentraining.activity.start_training.FExListActivity"
+            android:name=".activity.start_training.FExListActivity"
+            android:icon="@drawable/icon_dumbbell"
             android:label="@string/title_exercise_list"
-            android:parentActivityName="de.skubware.opentraining.activity.MainActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:icon="@drawable/icon_dumbbell" >
+            android:parentActivityName=".activity.MainActivity"
+            android:windowSoftInputMode="stateHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="de.skubware.opentraining.activity.MainActivity" />
         </activity>
         <activity
-            android:name="de.skubware.opentraining.activity.start_training.FExDetailActivity"
+            android:name=".activity.start_training.FExDetailActivity"
+            android:icon="@drawable/icon_dumbbell"
             android:label="@string/title_exercise_detail"
             android:parentActivityName=".ExerciseListActivity"
-            android:windowSoftInputMode="stateHidden" 
-            android:icon="@drawable/icon_dumbbell" >
+            android:windowSoftInputMode="stateHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ExerciseListActivity" />
         </activity>
         <activity
-            android:name="de.skubware.opentraining.activity.manage_workouts.WorkoutListActivity"
+            android:name=".activity.manage_workouts.WorkoutListActivity"
+            android:icon="@drawable/icon_dumbbell"
             android:label="@string/title_workout_list"
-            android:parentActivityName="de.skubware.opentraining.activity.MainActivity" 
-            android:icon="@drawable/icon_dumbbell" >
+            android:parentActivityName=".activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="de.skubware.opentraining.activity.MainActivity" />
         </activity>
         <activity
-            android:name="de.skubware.opentraining.activity.manage_workouts.WorkoutDetailActivity"
+            android:name=".activity.manage_workouts.WorkoutDetailActivity"
+            android:icon="@drawable/icon_dumbbell"
             android:label="@string/title_workout_detail"
-            android:parentActivityName="de.skubware.opentraining.activity.manage_workouts.WorkoutListActivity" 
-            android:icon="@drawable/icon_dumbbell" >
+            android:parentActivityName=".activity.manage_workouts.WorkoutListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".WorkoutListActivity" />
         </activity>
         <activity
-            android:name="de.skubware.opentraining.activity.settings.SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:icon="@drawable/icon_dumbbell" >
+            android:name=".activity.settings.SettingsActivity"
+            android:icon="@drawable/icon_dumbbell"
+            android:label="@string/title_activity_settings"></activity>
+        <activity
+            android:name=".activity.create_exercise.CreateExerciseActivity"
+            android:icon="@drawable/icon_dumbbell"
+            android:label="@string/create_exercise_activity_title"></activity>
+        <activity
+            android:name="org.acra.CrashReportDialog"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="true"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Dialog" />
+
+        <service
+            android:name=".activity.settings.sync.OpenTrainingSyncService"
+            android:enabled="true" />
+
+        <activity
+            android:name="com.examples.youtubeapidemo.PlayerControlsDemoActivity"
+            android:label="@string/player_controls_demo_name"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="@string/minVersion"
+                android:value="8" />
+            <meta-data
+                android:name="@string/isLaunchableActivity"
+                android:value="true" />
         </activity>
         <activity
-            android:name="de.skubware.opentraining.activity.create_exercise.CreateExerciseActivity"
-            android:label="@string/create_exercise_activity_title"
-            android:icon="@drawable/icon_dumbbell" >
+            android:name="com.examples.youtubeapidemo.YouTubeAPIDemoActivity"
+            android:label="@string/youtube_api_demo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="@string/isLaunchableActivity"
+                android:value="false" />
         </activity>
-		<activity android:name="org.acra.CrashReportDialog"
-        	android:theme="@android:style/Theme.Dialog"
-        	android:launchMode="singleInstance"
-        	android:excludeFromRecents="true"
-        	android:finishOnTaskLaunch="true" />
-		
-        <service android:enabled="true" android:name="de.skubware.opentraining.activity.settings.sync.OpenTrainingSyncService" />
-        
+        <activity
+            android:name="com.examples.youtubeapidemo.VideoWallDemoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/videowall_demo_name"
+            android:screenOrientation="landscape"
+            android:theme="@style/BlackNoBarsTheme">
+            <meta-data
+                android:name="@string/minVersion"
+                android:value="11" />
+            <meta-data
+                android:name="@string/isLaunchableActivity"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name="com.examples.youtubeapidemo.VideoListDemoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/videolist_demo_name">
+            <meta-data
+                android:name="@string/minVersion"
+                android:value="13" />
+            <meta-data
+                android:name="@string/isLaunchableActivity"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name="com.examples.youtubeapidemo.PlayerViewDemoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/playerview_demo_name"
+            android:screenOrientation="nosensor">
+            <meta-data
+                android:name="@string/minVersion"
+                android:value="8" />
+            <meta-data
+                android:name="@string/isLaunchableActivity"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name="com.examples.youtubeapidemo.FragmentDemoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/fragment_demo_name"
+            android:screenOrientation="nosensor">
+            <meta-data
+                android:name="@string/minVersion"
+                android:value="11" />
+            <meta-data
+                android:name="@string/isLaunchableActivity"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name="com.examples.youtubeapidemo.FullscreenDemoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/fullscreen_demo_name"
+            android:screenOrientation="sensor"
+            android:theme="@style/BlackNoTitleBarTheme">
+            <meta-data
+                android:name="@string/minVersion"
+                android:value="8" />
+            <meta-data
+                android:name="@string/isLaunchableActivity"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name="com.examples.youtubeapidemo.ActionBarDemoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/action_bar_demo_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/OverlayActionBarTheme">
+            <meta-data
+                android:name="@string/minVersion"
+                android:value="11" />
+            <meta-data
+                android:name="@string/isLaunchableActivity"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name="com.examples.youtubeapidemo.StandalonePlayerDemoActivity"
+            android:label="@string/standalone_player_demo_name">
+            <meta-data
+                android:name="@string/minVersion"
+                android:value="8" />
+            <meta-data
+                android:name="@string/isLaunchableActivity"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name="com.examples.youtubeapidemo.IntentsDemoActivity"
+            android:label="@string/intents_demo_name">
+            <meta-data
+                android:name="@string/minVersion"
+                android:value="8" />
+            <meta-data
+                android:name="@string/isLaunchableActivity"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name=".activity.SearchingActivity"
+            android:label="@string/title_activity_searching">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>
