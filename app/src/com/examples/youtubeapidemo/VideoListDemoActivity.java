@@ -143,9 +143,11 @@ public final class VideoListDemoActivity extends Activity implements OnFullscree
 
         checkYouTubeApi();
 
-        FitnessExercise fe = (FitnessExercise)getIntent().getExtras().get(FExDetailFragment.ARG_FEX);
-        if (fe != null) {
-            searchView.setQuery(fe.getLocalizedName(), true);
+        if (getIntent().getExtras() != null) {
+            FitnessExercise fe = (FitnessExercise) getIntent().getExtras().get(FExDetailFragment.ARG_FEX);
+            if (fe != null) {
+                searchView.setQuery(fe.getLocalizedName(), true);
+            }
         }
     }
 
