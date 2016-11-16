@@ -46,6 +46,7 @@ import de.skubware.opentraining.R;
 import de.skubware.opentraining.activity.create_workout.ExerciseTypeListActivity;
 import de.skubware.opentraining.activity.manage_workouts.WorkoutListActivity;
 import de.skubware.opentraining.activity.settings.SettingsActivity;
+import de.skubware.opentraining.activity.start_running.RunningListActivity;
 import de.skubware.opentraining.activity.tabata.TabataActivity;
 import de.skubware.opentraining.basic.Workout;
 import de.skubware.opentraining.database.DatabaseForCamel;
@@ -144,16 +145,19 @@ public class MainActivity extends ActionBarActivity {
                     case 1:
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), TabataActivity.class));
                         break;
-                    case 2: // create workout
+                    case 2:
+                        startActivity(new Intent(MainActivity.this.getApplicationContext(), RunningListActivity.class));
+                        break;
+                    case 3: // create workout
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), ExerciseTypeListActivity.class));
                         break;
-                    case 3: // manage workout
+                    case 4: // manage workout
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), WorkoutListActivity.class));
                         break;
-                    case 4: // settings
+                    case 5: // settings
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), SettingsActivity.class));
                         break;
-                    case 5: // Video1
+                    case 6: // Video1
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), VideoListDemoActivity.class));
                         break;
 
