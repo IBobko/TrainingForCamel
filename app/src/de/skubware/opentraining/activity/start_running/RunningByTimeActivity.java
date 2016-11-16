@@ -39,7 +39,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import de.skubware.opentraining.R;
-import de.skubware.opentraining.activity.start_running.RunningDistanceThread;
+
 
 /**
  * An activity representing running menu.
