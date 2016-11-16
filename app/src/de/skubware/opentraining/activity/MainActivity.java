@@ -130,110 +130,61 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
-                    case 0:
+                    case 0: // start training
                         showSelectWorkoutDialog();
                         break;
-                    case 1:
+                    case 1: // create workout
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), ExerciseTypeListActivity.class));
                         break;
-                    case 2:
+                    case 2: // manage workout
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), WorkoutListActivity.class));
                         break;
-                    case 3:
+                    case 3: // settings
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), SettingsActivity.class));
                         break;
-                    case 4:
-                        startActivity(new Intent(MainActivity.this.getApplicationContext(), PlayerControlsDemoActivity.class));
+                    case 4: // Video1
+                        startActivity(new Intent(MainActivity.this.getApplicationContext(), VideoListDemoActivity.class));
                         break;
-
-                    case 5:
+                    case 5: // Video2
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), ActionBarDemoActivity.class));
                         break;
-
-                    case 6:
+                    case 6: // Video3
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), FragmentDemoActivity.class));
                         break;
-
-                    case 7:
+                    case 7: // Video4
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), FullscreenDemoActivity.class));
 
-                        YouTube youtube = new YouTube.Builder(new NetHttpTransport(), new JacksonFactory(), new HttpRequestInitializer() {
-                            public void initialize(HttpRequest request) throws IOException {
-                            }
-                        }).setApplicationName("youtube-cmdline-search-sample").build();
 
 
-                        // Prompt the user to enter a query term.
-                        String queryTerm = "hello";
-
-                        // Define the API request for retrieving search results.
-                        YouTube.Search.List search = null;
-                        try {
-                            search = youtube.search().list("id,snippet");
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                        // Set your developer key from the {{ Google Cloud Console }} for
-                        // non-authenticated requests. See:
-                        // {{ https://cloud.google.com/console }}
-                        String apiKey = DeveloperKey.DEVELOPER_KEY;
-                        search.setKey(apiKey);
-                        search.setQ(queryTerm);
-
-                        // Restrict the search results to only include videos. See:
-                        // https://developers.google.com/youtube/v3/docs/search/list#type
-                        search.setType("video");
-
-                        // To increase efficiency, only retrieve the fields that the
-                        // application uses.
-                        search.setFields("items(id/kind,id/videoId,snippet/title,snippet/thumbnails/default/url)");
-                        search.setMaxResults(10L);
-
-                        // Call the API and print results.
-                        SearchListResponse searchResponse = null;
-                        try {
-                            searchResponse = search.execute();
-
-                            List<SearchResult> searchResultList = searchResponse.getItems();
-                            for (SearchResult sr: searchResultList) {
-                                System.out.println(sr.getEtag());
-                            }
-                            break;
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-
-                    case 8:
+                    case 8: // Video5
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), IntentsDemoActivity.class));
                         break;
 
-                    case 9:
+                    case 9: // Video6
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), PlayerViewDemoActivity.class));
                         break;
 
-                    case 10:
+                    case 10: // Video7
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), StandalonePlayerDemoActivity.class));
                         break;
 
-                    case 11:
+                    case 11: // Video8
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), VideoListDemoActivity.class));
                         break;
 
-                    case 12:
+                    case 12: // Video9
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), VideoWallDemoActivity.class));
                         break;
 
-                    case 13:
+                    case 13: // Video10
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), YouTubeAPIDemoActivity.class));
                         break;
 
-                    case 14:
+                    case 14: // Video11
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), YouTubeFailureRecoveryActivity.class));
                         break;
 
-                    case 15:
+                    case 15: // Video12
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), SearchingActivity.class));
                         break;
 

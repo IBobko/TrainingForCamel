@@ -13,6 +13,11 @@
         android:title="@string/history"
         yourapp:showAsAction="ifRoom"/>
     <item
+        android:id="@+id/search_on_youtube_button"
+        android:icon="@drawable/youtube_icon"
+        android:title="@string/history"
+        yourapp:showAsAction="always"/>
+    <item
         android:id="@+id/menu_item_add_entry"
         android:icon="@drawable/icon_add"
         android:title="@string/add_entry"
