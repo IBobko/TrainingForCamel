@@ -22,15 +22,12 @@ package de.skubware.opentraining.activity.start_running;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
-import android.view.MenuItem;
+
+import android.view.View;
+import android.widget.Button;
 
 import de.skubware.opentraining.R;
-import de.skubware.opentraining.activity.MainActivity;
-import de.skubware.opentraining.activity.create_workout.ExerciseTypeListActivity;
-import de.skubware.opentraining.activity.manage_workouts.WorkoutDetailFragment;
-import de.skubware.opentraining.activity.manage_workouts.WorkoutListActivity;
 
 /**
  * An activity representing running menu.
@@ -45,21 +42,24 @@ public class RunningListActivity extends ActionBarActivity {
 		// Show the Up button in the action bar.
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-		// savedInstanceState is non-null when there is fragment state
-		// saved from previous configurations of this activity
-		// (e.g. when rotating the screen from portrait to landscape).
-		// In this case, the fragment will automatically be re-added
-		// to its container so we don't need to manually add it.
-		// For more information, see the Fragments API guide at:
-		//
-		// http://developer.android.com/guide/components/fragments.html
-		//
-		if (savedInstanceState == null) {
-			// Create the detail fragment and add it to the activity
-			// using a fragment transaction.
-		}
+		Button btnRunByTime = (Button) findViewById(R.id.btn_run_by_time);
+		Button btnRunByDistance = (Button) findViewById(R.id.btn_run_by_distance);
+		btnRunByTime.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(RunningListActivity.this.getApplicationContext(), RunningByTimeActivity.class);
+				intent.putExtra("mode","time");
+				startActivity(intent);
+			}
+		});
+		btnRunByDistance.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(RunningListActivity.this.getApplicationContext(), RunningByTimeActivity.class);
+				intent.putExtra("mode","distance");
+				startActivity(intent);
+			}
+		});
 	}
-	private void onBtnRunningByTimeClick(){
-		startActivity(new Intent(RunningListActivity.this.getApplicationContext(), ExerciseTypeListActivity.class));
-	}
+
 }
