@@ -44,6 +44,7 @@ import java.util.List;
 import at.technikum.mti.fancycoverflow.FancyCoverFlow;
 import de.skubware.opentraining.R;
 import de.skubware.opentraining.activity.create_workout.ExerciseTypeListActivity;
+import de.skubware.opentraining.activity.manage_weight.ManageWeightActivity;
 import de.skubware.opentraining.activity.manage_workouts.WorkoutListActivity;
 import de.skubware.opentraining.activity.settings.SettingsActivity;
 import de.skubware.opentraining.activity.start_running.RunningListActivity;
@@ -155,9 +156,12 @@ public class MainActivity extends ActionBarActivity {
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), WorkoutListActivity.class));
                         break;
                     case 5: // settings
+                        startActivity(new Intent(MainActivity.this.getApplicationContext(), ManageWeightActivity.class));
+                        break;
+                    case 6: // settings
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), SettingsActivity.class));
                         break;
-                    case 6: // Video1
+                    case 7: // Video1
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), VideoListDemoActivity.class));
                         break;
 
