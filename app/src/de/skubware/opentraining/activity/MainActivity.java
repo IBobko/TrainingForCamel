@@ -46,6 +46,7 @@ import de.skubware.opentraining.R;
 import de.skubware.opentraining.activity.create_workout.ExerciseTypeListActivity;
 import de.skubware.opentraining.activity.manage_workouts.WorkoutListActivity;
 import de.skubware.opentraining.activity.settings.SettingsActivity;
+import de.skubware.opentraining.activity.tabata.TabataActivity;
 import de.skubware.opentraining.basic.Workout;
 import de.skubware.opentraining.database.DatabaseForCamel;
 import de.skubware.opentraining.database.WeightEntity;
@@ -140,61 +141,21 @@ public class MainActivity extends ActionBarActivity {
                     case 0: // start training
                         showSelectWorkoutDialog();
                         break;
-                    case 1: // create workout
+                    case 1:
+                        startActivity(new Intent(MainActivity.this.getApplicationContext(), TabataActivity.class));
+                        break;
+                    case 2: // create workout
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), ExerciseTypeListActivity.class));
                         break;
-                    case 2: // manage workout
+                    case 3: // manage workout
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), WorkoutListActivity.class));
                         break;
-                    case 3: // settings
+                    case 4: // settings
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), SettingsActivity.class));
                         break;
-                    case 4: // Video1
+                    case 5: // Video1
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), VideoListDemoActivity.class));
                         break;
-//                    case 5: // Video2
-//                        startActivity(new Intent(MainActivity.this.getApplicationContext(), ActionBarDemoActivity.class));
-//                        break;
-//                    case 6: // Video3
-//                        startActivity(new Intent(MainActivity.this.getApplicationContext(), FragmentDemoActivity.class));
-//                        break;
-//                    case 7: // Video4
-//                        startActivity(new Intent(MainActivity.this.getApplicationContext(), FullscreenDemoActivity.class));
-//
-//
-//
-//                    case 8: // Video5
-//                        startActivity(new Intent(MainActivity.this.getApplicationContext(), IntentsDemoActivity.class));
-//                        break;
-//
-//                    case 9: // Video6
-//                        startActivity(new Intent(MainActivity.this.getApplicationContext(), PlayerViewDemoActivity.class));
-//                        break;
-//
-//                    case 10: // Video7
-//                        startActivity(new Intent(MainActivity.this.getApplicationContext(), StandalonePlayerDemoActivity.class));
-//                        break;
-//
-//                    case 11: // Video8
-//                        startActivity(new Intent(MainActivity.this.getApplicationContext(), VideoListDemoActivity.class));
-//                        break;
-//
-//                    case 12: // Video9
-//                        startActivity(new Intent(MainActivity.this.getApplicationContext(), VideoWallDemoActivity.class));
-//                        break;
-//
-//                    case 13: // Video10
-//                        startActivity(new Intent(MainActivity.this.getApplicationContext(), YouTubeAPIDemoActivity.class));
-//                        break;
-//
-//                    case 14: // Video11
-//                        startActivity(new Intent(MainActivity.this.getApplicationContext(), YouTubeFailureRecoveryActivity.class));
-//                        break;
-//
-//                    case 15: // Video12
-//                        startActivity(new Intent(MainActivity.this.getApplicationContext(), SearchingActivity.class));
-//                        break;
-
 
                     default:
                         Log.wtf(TAG, "This item should not exist.");
