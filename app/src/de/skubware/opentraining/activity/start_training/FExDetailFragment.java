@@ -46,6 +46,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.examples.youtubeapidemo.VideoListDemoActivity;
+
 import de.skubware.opentraining.R;
 import de.skubware.opentraining.activity.create_workout.ExerciseDetailOnGestureListener;
 import de.skubware.opentraining.basic.FSet;
@@ -169,7 +172,7 @@ public class FExDetailFragment extends Fragment implements DialogFragmentAddEntr
 	}
 
 	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+	public void onCreateOptionsMenu(Menu menu, final MenuInflater inflater) {
 		inflater.inflate(R.menu.fex_detail_menu, menu);
 
 		// configure menu_item_add_entry
@@ -200,6 +203,18 @@ public class FExDetailFragment extends Fragment implements DialogFragmentAddEntr
 				builder.setMessage(license);
 				builder.create().show();
 
+				return true;
+			}
+		});
+
+
+		// configure menu_item_license_info
+		MenuItem menu_item_search_on_tube = (MenuItem) menu.findItem(R.id.search_on_youtube_button);
+		menu_item_search_on_tube.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			public boolean onMenuItemClick(MenuItem item) {
+				Intent intent = new Intent(getActivity().getApplicationContext(), VideoListDemoActivity.class);
+				intent.putExtra(FExDetailFragment.ARG_FEX,mExercise);
+				startActivity(intent);
 				return true;
 			}
 		});
@@ -257,14 +272,14 @@ public class FExDetailFragment extends Fragment implements DialogFragmentAddEntr
 
 
 	
-	/**
+	/*
 	 * Shows DialogFragmentAddEntry with the given {@link FSet}.
 	 * 
 	 * @param set
 	 *            The FSet to edit. If it is null a new FSet will be added to
 	 *            the TrainingEntry.
 	 *            
-	 * @see DialogFragmentAddEntry#newInstance(FitnessExercise, FSet)           
+	 * @see DialogFragmentAddEntry#newInstance(FitnessExercise, FSet)
 	 */
 	private void showDialog(FSet set, int setPosition) {
 

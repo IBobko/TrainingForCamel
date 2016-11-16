@@ -7,5 +7,9 @@
     
     <color name="text_color_table">#111111</color>
     <color name="actionbar_text">#EFEFEF</color>
-    
+
+        <color name="gray">#ff888888</color>
+
+
+
 </resources>    
