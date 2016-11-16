@@ -22,6 +22,7 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name">
@@ -232,6 +233,16 @@
             </intent-filter>
 
         </activity>
+
+        <activity
+            android:name=".activity.tabata.TabataActivity"
+            android:label="@string/title_activity_tabata" />
+        <activity
+            android:name=".activity.tabata.ChooseTimeActivity"
+            android:label="@string/title_activity_choose_time"
+
+            ></activity>
+
     </application>
 
 </manifest>

@@ -16,3 +16,5 @@ app/svg/.SVG
 /.idea
 local.properties
 opentraining.iml
+
+*.iml
