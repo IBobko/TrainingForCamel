@@ -117,7 +117,32 @@
                 android:name="@string/isLaunchableActivity"
                 android:value="true" />
         </activity>
+            android:name=".activity.settings.SettingsActivity"
+            android:icon="@drawable/icon_dumbbell"
+            android:label="@string/title_activity_settings" />
         <activity
+            android:name=".activity.create_exercise.CreateExerciseActivity"
+            android:icon="@drawable/icon_dumbbell"
+            android:label="@string/create_exercise_activity_title" />
+        <activity
+            android:name="org.acra.CrashReportDialog"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="true"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Dialog" />
+
+        <service
+            android:name=".activity.settings.sync.OpenTrainingSyncService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".activity.tabata.TabataActivity"
+            android:label="@string/title_activity_tabata" />
+        <activity
+            android:name=".activity.tabata.ChooseTimeActivity"
+            android:label="@string/title_activity_choose_time"
+
+            ></activity>
             android:name="com.examples.youtubeapidemo.YouTubeAPIDemoActivity"
             android:label="@string/youtube_api_demo">
             <intent-filter>
