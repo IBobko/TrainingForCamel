@@ -1,15 +1,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container_workout_detail"
+    android:id="@+id/container_workout_detail1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
 
+    tools:context="de.skubware.opentraining.activity.manage_weight.ManageWeightActivity">
 
     <ListView
-        android:id="@+id/listview_weight"
+        android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true">
+        android:layout_height="match_parent"
+        android:headerDividersEnabled="true"
+        android:footerDividersEnabled="true">
     </ListView>
 
 </RelativeLayout>
