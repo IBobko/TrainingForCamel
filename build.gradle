@@ -83,6 +83,7 @@ dependencies {
   compile files('app/libs/YouTubeAndroidPlayerApi.jar')
   compile 'com.google.apis:google-api-services-youtube:v3-rev179-1.22.0'
   compile 'com.idescout.sql:sqlscout-server:2.0'
+  compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 }
 
 task wrapper (type: Wrapper) { gradleVersion = "1.11" }

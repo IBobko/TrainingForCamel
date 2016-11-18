@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_tabata_start"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="de.skubware.opentraining.activity.tabata.TabataStartActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <TextView
+            android:text="@string/textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/curAction"
+            android:textSize="36sp"
+            android:gravity="center"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTime"
+            android:textSize="99sp"
+            android:textAlignment="center"
+            android:gravity="bottom|center"
+            android:layout_weight="0.32"
+            tools:ignore="InefficientWeight" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.83"
+                android:layout_gravity="left"
+                tools:ignore="RtlHardcoded" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.93"
+                android:layout_gravity="right"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:layout_width="77dp"
+                android:layout_height="match_parent"
+                android:id="@+id/startButton"
+                android:elevation="0dp"
+                android:background="@drawable/icon_pause_button"
+                tools:ignore="UnusedAttribute" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.49"
+                android:visibility="invisible"
+                android:id="@+id/btwnButtons" />
+
+            <Button
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:id="@+id/resetButton"
+                android:background="@drawable/icon_restart_button"
+                android:enabled="false"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.58" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="DisableBaselineAlignment"
+            android:id="@+id/leftLayout"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentTop="false">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/roundsLeftText"
+                    android:textSize="20sp"
+                    android:gravity="center_vertical|center"
+                    tools:text="ROUNDS LEFT"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center"
+                    android:visibility="visible"
+                    android:text="ROUNDS LEFT" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:id="@+id/roundsLeftValue"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|center"
+                    android:textSize="24sp"
+                    tools:ignore="NestedWeights"
+                    android:textStyle="normal|bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cyclesLeftText"
+                    android:textSize="20sp"
+                    android:gravity="center_vertical|center"
+                    tools:text="CYCLES LEFT"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center"
+                    android:visibility="visible"
+                    android:text="CYCLES LEFT" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:id="@+id/cyclesLeftValue"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|center"
+                    android:textSize="24sp"
+                    tools:ignore="NestedWeights"
+                    android:textStyle="normal|bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/next_action"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:id="@+id/nextAction"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:layout_gravity="bottom|end"
+            android:layout_alignParentBottom="true" />
+    </LinearLayout>
+
+</RelativeLayout>

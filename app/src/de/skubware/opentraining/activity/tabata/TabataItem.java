@@ -56,17 +56,19 @@ public class TabataItem implements Serializable {
     }
 
     public String getStringValue() {
-
+        String result = "00";
         if (isTime) {
             if(value >60){
-                return Integer.toString(value/60) + ":" + Integer.toString(value%60);
+                String sec =String.format("%02d", value%60);
+                result = Integer.toString( value/60) + ":" + sec;
             }else{
-                return ":" + Integer.toString(value);
+                result = ":" + String.format("%02d", value);
             }
         } else {
-            return Integer.toString(value);
+            result=  Integer.toString( value);
         }
-
+        return result;
     }
+
 
 }

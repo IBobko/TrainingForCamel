@@ -60,6 +60,7 @@ public class ChooseTimeActivity extends ActionBarActivity {
         numberPicker = (TabataNumberPicker) findViewById(R.id.numberPicker);
         secPicker = (TabataNumberPicker) findViewById(R.id.secondPicker);
         LinearLayout secLayout = (LinearLayout) findViewById(R.id.secondLayout);
+        LinearLayout numberLayout = (LinearLayout) findViewById(R.id.numberLayout);
         Intent i = getIntent();
         item = (TabataItem)i.getSerializableExtra("TabataItem");
         position = i.getIntExtra("position", 0);
@@ -82,12 +83,14 @@ public class ChooseTimeActivity extends ActionBarActivity {
             numberPicker.setValue(item.getValue()%60);
             numberPicker.setMaxValue(item.getMaxValue()/60);
         } else {
+            numberLayout.setVisibility(View.GONE);
+            secLayout.setVisibility(View.VISIBLE);
             secPicker.setMinValue(item.getMinValue());
             secPicker.setMaxValue(item.getMaxValue());
             secPicker.setValue(item.getValue());
         }
 
-        numberPicker.setMinValue(item.getMinValue());
+        //numberPicker.setMinValue(item.getMinValue());
 
     }
 

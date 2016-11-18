@@ -1,4 +1,9 @@
 <resources>
     <string name="title_activity_tabata">TabataActivity</string>
     <string name="title_activity_choose_time">ChooseTimeActivity</string>
+    <string name="title_activity_tabata_start">TabataStartActivity</string>
+    <string name="next_action">Next action</string>
+    <string name="textview">TextView</string>
+    <string name="nextActionText">"Next action: "</string>
+    <string name="doneText">Done</string>
 </resources>
