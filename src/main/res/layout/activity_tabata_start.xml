@@ -14,7 +14,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_alignParentTop="true">
 
         <TextView
             android:text="@string/textview"
@@ -40,42 +41,30 @@
             android:layout_width="match_parent"
             android:layout_height="75dp">
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.83"
-                android:layout_gravity="left"
-                tools:ignore="RtlHardcoded" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.93"
-                android:layout_gravity="right"
-                tools:ignore="RtlHardcoded" />
+                <Button
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/resetButton"
+                    android:background="@drawable/icon_restart_button"
+                    android:visibility="invisible"
+                    android:enabled="true"
+                    android:layout_alignParentRight="true" />
 
-            <Button
-                android:layout_width="77dp"
-                android:layout_height="match_parent"
-                android:id="@+id/startButton"
-                android:elevation="0dp"
-                android:background="@drawable/icon_pause_button"
-                tools:ignore="UnusedAttribute" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.49"
-                android:visibility="invisible"
-                android:id="@+id/btwnButtons" />
-
-            <Button
-                android:layout_width="75dp"
-                android:layout_height="match_parent"
-                android:id="@+id/resetButton"
-                android:background="@drawable/icon_restart_button"
-                android:enabled="false"
-                android:visibility="invisible" />
+                <Button
+                    android:layout_width="77dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/startButton"
+                    android:elevation="0dp"
+                    android:background="@drawable/icon_pause_button"
+                    tools:ignore="UnusedAttribute"
+                    android:layout_gravity="center"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -173,6 +162,10 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="32dp" />
 
         <TextView
             android:text="@string/next_action"

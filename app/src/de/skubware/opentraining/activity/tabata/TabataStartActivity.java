@@ -1,6 +1,8 @@
 package de.skubware.opentraining.activity.tabata;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
@@ -36,6 +38,7 @@ public class TabataStartActivity extends ActionBarActivity {
     private Button resetButton;
     private TextView curActionView;
     private TextView nextActView;
+    private ToneGenerator toneG;
 
 
     @Override
@@ -54,7 +57,8 @@ public class TabataStartActivity extends ActionBarActivity {
         tabata.setTimerView(timerView);
         tabata.setNextActView(nextActView);
         tabata.setCurActionView(curActionView);
-        currentTabata = tabata.getTabataItemList().get(0);
+
+        toneG = new ToneGenerator(AudioManager.STREAM_MUSIC, 50);
         initData();
         startTabata();
     }
@@ -65,12 +69,13 @@ public class TabataStartActivity extends ActionBarActivity {
         currentRaund = 0;
         currentCycle = 0;
         timeRemain = 0;
-        worK = true;
-        pause = false;
         nextActView.setText(getNextaction());
         curActionView.setText(tabata.getTabataItemList().get(currentPosition).getDiscription());
         cyclesLeftValue.setText(Integer.toString(getCyclesRemain()));
         roundsLeftValue.setText(Integer.toString(getRoundRemain()));
+        currentTabata = tabata.getTabataItemList().get(0);
+        timerView.setText(Integer.toString(currentTabata.getValue()));
+
     }
 
     private void createButtons(){
@@ -85,7 +90,8 @@ public class TabataStartActivity extends ActionBarActivity {
                     resetButton.setVisibility(View.VISIBLE);
                 }else {
                     startButton.setBackgroundResource(R.drawable.icon_pause_button);
-                    resetButton.setVisibility(View.GONE);
+                    resetButton.setVisibility(View.INVISIBLE);
+                    startTabata();
                 }
             }
         });
@@ -107,13 +113,9 @@ public class TabataStartActivity extends ActionBarActivity {
 
             public void run() {
 
-                //TabataItem item = getPosition();
-
                 while (worK) {
                     try {
                         Thread.sleep(1000);
-
-
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -129,6 +131,7 @@ public class TabataStartActivity extends ActionBarActivity {
                                     timerView.setText(Integer.toString(timeRemain));
 
                                 } else {
+                                    toneG.startTone(ToneGenerator.TONE_CDMA_PIP,150);
                                     nextAction();
                                     timerView.setText(Integer.toString(0));
                                 }
@@ -201,8 +204,5 @@ public class TabataStartActivity extends ActionBarActivity {
         return result;
 
     }
-
-
-
 
 }
