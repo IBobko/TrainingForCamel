@@ -255,6 +255,14 @@
             android:label="@string/title_activity_tabata" />
         <activity
             android:name=".activity.tabata.ChooseTimeActivity"
+            android:label="@string/title_activity_choose_time"></activity>
+        <activity
+            android:name=".activity.manage_weight.ManageWeightActivity"
+            android:label="@string/title_activity_manage_weight"
+            android:theme="@android:style/Theme.Holo"
+            >
+        </activity>
+        <activity android:name=".activity.EditWeightActivity"></activity>
             android:label="@string/title_activity_choose_time" />
         <activity
             android:name=".activity.tabata.TabataStartActivity"

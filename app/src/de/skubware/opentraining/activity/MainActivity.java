@@ -18,11 +18,9 @@
 
 package de.skubware.opentraining.activity;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
@@ -44,13 +42,12 @@ import java.util.List;
 import at.technikum.mti.fancycoverflow.FancyCoverFlow;
 import de.skubware.opentraining.R;
 import de.skubware.opentraining.activity.create_workout.ExerciseTypeListActivity;
+import de.skubware.opentraining.activity.manage_weight.ManageWeightActivity;
 import de.skubware.opentraining.activity.manage_workouts.WorkoutListActivity;
 import de.skubware.opentraining.activity.settings.SettingsActivity;
 import de.skubware.opentraining.activity.start_running.RunningListActivity;
 import de.skubware.opentraining.activity.tabata.TabataActivity;
 import de.skubware.opentraining.basic.Workout;
-import de.skubware.opentraining.database.DatabaseForCamel;
-import de.skubware.opentraining.database.WeightEntity;
 import de.skubware.opentraining.db.Cache;
 import de.skubware.opentraining.db.DataProvider;
 import de.skubware.opentraining.db.IDataProvider;
@@ -102,26 +99,6 @@ public class MainActivity extends ActionBarActivity {
         if (showDisclaimer) {
             new DisclaimerDialog(this);
         }
-
-        final DatabaseForCamel databaseForCamel = new DatabaseForCamel(getApplicationContext());
-        SQLiteDatabase db = databaseForCamel.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put("d", "1");
-        values.put("w", 100);
-
-
-
-        long newRowId = db.insert(WeightEntity.TABLE_NAME,null,values);
-
-
-
-
-
-        //databaseForCamel.
-        //databaseForCamel.getWritableDatabase().execSQL("INSERT INTO (id,d,w) values('1','1','1')");
-
-
     }
 
     private void setUpNavigation() {
@@ -155,9 +132,12 @@ public class MainActivity extends ActionBarActivity {
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), WorkoutListActivity.class));
                         break;
                     case 5: // settings
+                        startActivity(new Intent(MainActivity.this.getApplicationContext(), ManageWeightActivity.class));
+                        break;
+                    case 6: // settings
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), SettingsActivity.class));
                         break;
-                    case 6: // Video1
+                    case 7: // Video1
                         startActivity(new Intent(MainActivity.this.getApplicationContext(), VideoListDemoActivity.class));
                         break;
 

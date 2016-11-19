@@ -53,6 +53,7 @@ public class NavigationGalleryAdapter extends FancyCoverFlowAdapter {
 		mNameList.add("Start running");
 		mNameList.add(mContext.getString(R.string.create_workout));
 		mNameList.add(mContext.getString(R.string.manage_workouts));
+		mNameList.add(mContext.getString(R.string.manage_weight));
 		mNameList.add(mContext.getString(R.string.settings));
 		mNameList.add("VideoListDemoActivity");
 	}
